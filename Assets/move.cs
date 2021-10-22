@@ -135,139 +135,142 @@ public class move : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "fleche haut")
+        if (GetComponent<placement>()._isStart())
         {
-            if (ValeurAbsolue(transform.position.x % 128) > 60 && ValeurAbsolue(transform.position.x % 128) < 68 && ValeurAbsolue(transform.position.y % 128) > 60 && ValeurAbsolue(transform.position.y % 128) < 68 && CooldownEchangeur <= 0)
+            if (collision.gameObject.tag == "fleche haut")
             {
-                vertical = 1 * multiplicateur;
-                horizontal = 0;
-                transform.position = new Vector2(collision.transform.position.x, collision.transform.position.y);
-
-            }
-        }
-        if (collision.gameObject.tag == "fleche gauche")
-        {
-            if (ValeurAbsolue(transform.position.x % 128) > 60 && ValeurAbsolue(transform.position.x % 128) < 68 && ValeurAbsolue(transform.position.y % 128) > 60 && ValeurAbsolue(transform.position.y % 128) < 68 && CooldownEchangeur <= 0)
-            {
-                vertical = 0;
-                horizontal = -1 * multiplicateur;
-                transform.position = new Vector2(collision.transform.position.x, collision.transform.position.y);
-            }
-
-        }
-        if (collision.gameObject.tag == "fleche bas")
-        {
-            //Debug.Log(transform.position.x % 128);
-            if (ValeurAbsolue(transform.position.x % 128) > 60 && ValeurAbsolue(transform.position.x % 128) < 68 && ValeurAbsolue(transform.position.y % 128) > 60 && ValeurAbsolue(transform.position.y % 128) < 68 && CooldownEchangeur <= 0)
-            {
-                vertical = -1 * multiplicateur;
-                horizontal = 0;
-                transform.position = new Vector2(collision.transform.position.x, collision.transform.position.y);
-
-            }
-
-
-
-        }
-        if (collision.gameObject.tag == "fleche droite")
-        {
-            if (ValeurAbsolue(transform.position.x % 128) > 60 && ValeurAbsolue(transform.position.x % 128) < 68 && ValeurAbsolue(transform.position.y % 128) > 60 && ValeurAbsolue(transform.position.y % 128) < 68 && CooldownEchangeur <= 0)
-
-            {
-                vertical = 0;
-                horizontal = 1 * multiplicateur;
-                transform.position = new Vector2(collision.transform.position.x, collision.transform.position.y);
-
-
-            }
-        }
-        if (collision.gameObject.tag == "echangeur")
-        {
-            //Debug.Log("yes");
-            if (ValeurAbsolue(transform.position.x % 128) > 60 && ValeurAbsolue(transform.position.x % 128) < 68 && ValeurAbsolue(transform.position.y % 128) > 60 && ValeurAbsolue(transform.position.y % 128) < 68 && CooldownEchangeur <= 0)
-
-            {
-                multiplicateur *= -1;
-                Debug.Log(multiplicateur);
-                CooldownEchangeur = MaxCooldownEchangeur;
-
-                int i = 0;
-                while(fleches.Count != i)
-                {                    
-                    if (multiplicateur < 0)
-                    {
-                        fleches[i].GetComponent<fleche_rotation>().switch_fleche();
-                    }
-                    else
-                    {
-                        fleches[i].GetComponent<fleche_rotation>().switch_fleche_retour();
-                    }
-                    i++;
-                }
-
-                int j = 0;
-                while (autre_cube.Count != j)
+                if (ValeurAbsolue(transform.position.x % 128) > 60 && ValeurAbsolue(transform.position.x % 128) < 68 && ValeurAbsolue(transform.position.y % 128) > 60 && ValeurAbsolue(transform.position.y % 128) < 68 && CooldownEchangeur <= 0)
                 {
-                    Debug.Log(j);
-                    autre_cube[j].GetComponent<move>().switch_multiplicateur();
+                    vertical = 1 * multiplicateur;
+                    horizontal = 0;
+                    transform.position = new Vector2(collision.transform.position.x, collision.transform.position.y);
 
-                    j++;
+                }
+            }
+            if (collision.gameObject.tag == "fleche gauche")
+            {
+                if (ValeurAbsolue(transform.position.x % 128) > 60 && ValeurAbsolue(transform.position.x % 128) < 68 && ValeurAbsolue(transform.position.y % 128) > 60 && ValeurAbsolue(transform.position.y % 128) < 68 && CooldownEchangeur <= 0)
+                {
+                    vertical = 0;
+                    horizontal = -1 * multiplicateur;
+                    transform.position = new Vector2(collision.transform.position.x, collision.transform.position.y);
                 }
 
             }
-
-        }
-        if (collision.gameObject.tag == "levier_mur")
-        {
-            
-            if (ValeurAbsolue(transform.position.x % 128) > 60 && ValeurAbsolue(transform.position.x % 128) < 68 && ValeurAbsolue(transform.position.y % 128) > 60 && ValeurAbsolue(transform.position.y % 128) < 68 && CooldownEchangeur <= 0)
+            if (collision.gameObject.tag == "fleche bas")
             {
-                collision.GetComponent<levier_mural>().switch_levier();
-            }
-        }
+                //Debug.Log(transform.position.x % 128);
+                if (ValeurAbsolue(transform.position.x % 128) > 60 && ValeurAbsolue(transform.position.x % 128) < 68 && ValeurAbsolue(transform.position.y % 128) > 60 && ValeurAbsolue(transform.position.y % 128) < 68 && CooldownEchangeur <= 0)
+                {
+                    vertical = -1 * multiplicateur;
+                    horizontal = 0;
+                    transform.position = new Vector2(collision.transform.position.x, collision.transform.position.y);
+
+                }
 
 
-
-
-                if (CooldownEchangeur > 0)
-        {
-            CooldownEchangeur -= Time.deltaTime;
-        }
-
-
-        if (collision.gameObject.tag == "teleport")
-        {
-            if (ValeurAbsolue(transform.position.x % 128) > 60 && ValeurAbsolue(transform.position.x % 128) < 68 && ValeurAbsolue(transform.position.y % 128) > 60 && ValeurAbsolue(transform.position.y % 128) < 68 && CooldownEchangeur <= 0)
-            {
 
             }
-        }
-        if (collision.gameObject.tag == "crown" && _isExplosed)
-        {
-            Debug.Log("ici");
-            if (collision.GetComponent<crown>().crown_index() == GetComponent<colorscript>().cube_index())
+            if (collision.gameObject.tag == "fleche droite")
             {
-                _start_manager.GetComponent<start_manager>().points();
-                GameObject explosion_cube = Instantiate(_cube_explosion, transform.position, Quaternion.Euler(0, 0, 0));
-                explosion_cube.GetComponent<explosion_color>().index = GetComponent<colorscript>().cube_index();
+                if (ValeurAbsolue(transform.position.x % 128) > 60 && ValeurAbsolue(transform.position.x % 128) < 68 && ValeurAbsolue(transform.position.y % 128) > 60 && ValeurAbsolue(transform.position.y % 128) < 68 && CooldownEchangeur <= 0)
+
+                {
+                    vertical = 0;
+                    horizontal = 1 * multiplicateur;
+                    transform.position = new Vector2(collision.transform.position.x, collision.transform.position.y);
+
+
+                }
+            }
+            if (collision.gameObject.tag == "echangeur")
+            {
+                //Debug.Log("yes");
+                if (ValeurAbsolue(transform.position.x % 128) > 60 && ValeurAbsolue(transform.position.x % 128) < 68 && ValeurAbsolue(transform.position.y % 128) > 60 && ValeurAbsolue(transform.position.y % 128) < 68 && CooldownEchangeur <= 0)
+
+                {
+                    multiplicateur *= -1;
+                    //Debug.Log(multiplicateur);
+                    CooldownEchangeur = MaxCooldownEchangeur;
+
+                    int i = 0;
+                    while (fleches.Count != i)
+                    {
+                        if (multiplicateur < 0)
+                        {
+                            fleches[i].GetComponent<fleche_rotation>().switch_fleche();
+                        }
+                        else
+                        {
+                            fleches[i].GetComponent<fleche_rotation>().switch_fleche_retour();
+                        }
+                        i++;
+                    }
+
+                    int j = 0;
+                    while (autre_cube.Count != j)
+                    {
+                        Debug.Log(j);
+                        autre_cube[j].GetComponent<move>().switch_multiplicateur();
+
+                        j++;
+                    }
+
+                }
+
+            }
+            if (collision.gameObject.tag == "levier_mur")
+            {
+
+                if (ValeurAbsolue(transform.position.x % 128) > 60 && ValeurAbsolue(transform.position.x % 128) < 68 && ValeurAbsolue(transform.position.y % 128) > 60 && ValeurAbsolue(transform.position.y % 128) < 68 && CooldownEchangeur <= 0)
+                {
+                    collision.GetComponent<levier_mural>().switch_levier();
+                }
+            }
+
+
+
+
+            if (CooldownEchangeur > 0)
+            {
+                CooldownEchangeur -= Time.deltaTime;
+            }
+
+
+            if (collision.gameObject.tag == "teleport")
+            {
+                if (ValeurAbsolue(transform.position.x % 128) > 60 && ValeurAbsolue(transform.position.x % 128) < 68 && ValeurAbsolue(transform.position.y % 128) > 60 && ValeurAbsolue(transform.position.y % 128) < 68 && CooldownEchangeur <= 0)
+                {
+
+                }
+            }
+            if (collision.gameObject.tag == "crown" && _isExplosed)
+            {
+                Debug.Log("ici");
+                if (collision.GetComponent<crown>().crown_index() == GetComponent<colorscript>().cube_index())
+                {
+                    _start_manager.GetComponent<start_manager>().points();
+                    GameObject explosion_cube = Instantiate(_cube_explosion, transform.position, Quaternion.Euler(0, 0, 0));
+                    explosion_cube.GetComponent<explosion_color>().index = GetComponent<colorscript>().cube_index();
+
+                    Destroy(gameObject);
+
+
+                }
+            }
+
+            else if (_isExplosed)
+            {
 
                 Destroy(gameObject);
-                
 
+                GameObject explosion_cube = Instantiate(_cube_explosion, transform.position, Quaternion.Euler(0, 0, 0));
+                explosion_cube.GetComponent<explosion_color>().index = GetComponent<colorscript>().cube_index();
             }
+
+
+
         }
-
-        else if (_isExplosed)
-        {
-
-            Destroy(gameObject);
-
-            GameObject explosion_cube = Instantiate(_cube_explosion, transform.position, Quaternion.Euler(0, 0, 0));
-            explosion_cube.GetComponent<explosion_color>().index = GetComponent<colorscript>().cube_index();
-        }
-
-
-
 
 
     }
