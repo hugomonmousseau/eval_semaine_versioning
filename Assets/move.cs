@@ -281,13 +281,14 @@ public class move : MonoBehaviour
             {
                 if (ValeurAbsolue(transform.position.x % 128) > 60 && ValeurAbsolue(transform.position.x % 128) < 68 && ValeurAbsolue(transform.position.y % 128) > 60 && ValeurAbsolue(transform.position.y % 128) < 68 && CooldownEchangeur <= 0)
                 {
-                    CooldownEchangeur = 1200;
+                    CooldownEchangeur = MaxCooldownEchangeur;
+                    transform.position = new Vector2(collision.transform.position.x, collision.transform.position.y);
                     GameObject new_box = Instantiate(_box, transform.position, Quaternion.Euler(0, 0, 0));
 
                     
 
-                    new_box.GetComponent<colorscript>().index = 2;
-                    new_box.GetComponent<move>().CooldownEchangeur = 1200;
+                    
+                    new_box.GetComponent<move>().CooldownEchangeur = MaxCooldownEchangeur;
 
                     _direction += 1;
                     if (_direction == 4)
@@ -412,9 +413,10 @@ public class move : MonoBehaviour
         }
         if (collision.gameObject.tag == "crown" && _isExplosed)
         {
-            Debug.Log("ici");
+            
             if (collision.GetComponent<crown>().crown_index() == GetComponent<colorscript>().cube_index())
             {
+                Debug.Log("ici");
                 _start_manager.GetComponent<start_manager>().points();
                 GameObject explosion_cube = Instantiate(_cube_explosion, transform.position, Quaternion.Euler(0, 0, 0));
                 explosion_cube.GetComponent<explosion_color>().index = GetComponent<colorscript>().cube_index();

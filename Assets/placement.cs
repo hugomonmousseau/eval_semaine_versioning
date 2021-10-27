@@ -42,6 +42,7 @@ public class placement : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
+            Debug.Log('t');
             if (drag_on)
             {
                 drag_on = false;
