@@ -41,10 +41,9 @@ public class start_manager : MonoBehaviour
             }  
         }
 
-        Debug.Log(points_lvl);
-        Debug.Log(blocs.Count);
 
-        if (points_lvl == blocs.Count *2)
+
+        if (points_lvl == blocs.Count)
         {
             bouton_niveau.SetActive(true);
         }
