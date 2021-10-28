@@ -147,6 +147,7 @@ public class move : MonoBehaviour
                     vertical = 1 * multiplicateur;
                     horizontal = 0;
                     transform.position = new Vector2(collision.transform.position.x, collision.transform.position.y);
+                    _direction = 1;
 
                 }
             }
@@ -157,6 +158,7 @@ public class move : MonoBehaviour
                     vertical = 0;
                     horizontal = -1 * multiplicateur;
                     transform.position = new Vector2(collision.transform.position.x, collision.transform.position.y);
+                    _direction = 3;
                 }
 
             }
@@ -168,7 +170,7 @@ public class move : MonoBehaviour
                     vertical = -1 * multiplicateur;
                     horizontal = 0;
                     transform.position = new Vector2(collision.transform.position.x, collision.transform.position.y);
-
+                    _direction = 2;
                 }
 
 
@@ -183,7 +185,7 @@ public class move : MonoBehaviour
                     horizontal = 1 * multiplicateur;
                     transform.position = new Vector2(collision.transform.position.x, collision.transform.position.y);
 
-
+                    _direction = 0;
                 }
             }
             if (collision.gameObject.tag == "echangeur")
