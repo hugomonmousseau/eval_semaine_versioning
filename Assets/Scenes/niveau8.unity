@@ -257,10 +257,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52a68646ca80ac547b8875730048c3d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  horizontal: 0
+  vertical: 0
   runSpeed: 300
   collision: {fileID: 0}
   multiplicateur: 1
   MaxCooldownEchangeur: 0.25
+  CooldownEchangeur: 0
   fleches:
   - {fileID: 128660106}
   - {fileID: 2065531654}
@@ -275,6 +278,7 @@ MonoBehaviour:
   idbox_explosion: {fileID: 664508044}
   _cube_explosion: {fileID: 4478317703968863769, guid: 4b74fe13e788a0f4cac13d1c51065343, type: 3}
   _start_manager: {fileID: 1762655215}
+  _box: {fileID: 0}
 --- !u!212 &36504741
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -710,7 +714,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: enjoy !
+  m_Text: niveau 9
 --- !u!222 &286169888
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -727,7 +731,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 286169885}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 14c8de4a5c1a7554cab114682ca8fce4, type: 2}
   m_CullingMode: 0
@@ -4176,10 +4180,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52a68646ca80ac547b8875730048c3d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  horizontal: 0
+  vertical: 0
   runSpeed: 300
   collision: {fileID: 0}
   multiplicateur: 1
   MaxCooldownEchangeur: 0.25
+  CooldownEchangeur: 0
   fleches:
   - {fileID: 128660106}
   - {fileID: 2065531654}
@@ -4194,6 +4201,7 @@ MonoBehaviour:
   idbox_explosion: {fileID: 1836864505}
   _cube_explosion: {fileID: 4478317703968863769, guid: 4b74fe13e788a0f4cac13d1c51065343, type: 3}
   _start_manager: {fileID: 1762655215}
+  _box: {fileID: 0}
 --- !u!212 &1127161730
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4930,10 +4938,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52a68646ca80ac547b8875730048c3d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  horizontal: 0
+  vertical: 0
   runSpeed: 300
   collision: {fileID: 0}
   multiplicateur: 1
   MaxCooldownEchangeur: 0.25
+  CooldownEchangeur: 0
   fleches:
   - {fileID: 2065531654}
   - {fileID: 128660106}
@@ -4948,6 +4959,7 @@ MonoBehaviour:
   idbox_explosion: {fileID: 1052680460}
   _cube_explosion: {fileID: 4478317703968863769, guid: 4b74fe13e788a0f4cac13d1c51065343, type: 3}
   _start_manager: {fileID: 1762655215}
+  _box: {fileID: 0}
 --- !u!212 &1346666727
 SpriteRenderer:
   m_ObjectHideFlags: 0
