@@ -46,7 +46,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 256
+  m_Radius: 225.58171
 --- !u!1 &4006158904368790329
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,9 +255,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  autre_cube: []
   direction_depart_fleches: {fileID: 4006158904368790329}
   _direction: 0
   timer: {fileID: 8340098927021065551}
+  idbox_explosion: {fileID: 0}
   _cube_explosion: {fileID: 4478317703968863769, guid: 4b74fe13e788a0f4cac13d1c51065343, type: 3}
   _start_manager: {fileID: 0}
 --- !u!50 &4560179875516314175

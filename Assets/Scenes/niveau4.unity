@@ -561,10 +561,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52a68646ca80ac547b8875730048c3d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  horizontal: 0
+  vertical: 0
   runSpeed: 300
   collision: {fileID: 0}
   multiplicateur: 1
   MaxCooldownEchangeur: 0.25
+  CooldownEchangeur: 0
   fleches:
   - {fileID: 0}
   - {fileID: 0}
@@ -577,6 +580,7 @@ MonoBehaviour:
   idbox_explosion: {fileID: 1751184096}
   _cube_explosion: {fileID: 4478317703968863769, guid: 4b74fe13e788a0f4cac13d1c51065343, type: 3}
   _start_manager: {fileID: 1804781061}
+  _box: {fileID: 0}
 --- !u!212 &326946891
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -923,7 +927,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5635668713000058015, guid: 39200071032f42a4c8361e30e913469c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1216
+      value: 1472
       objectReference: {fileID: 0}
     - target: {fileID: 5635668713000058015, guid: 39200071032f42a4c8361e30e913469c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2238,7 +2242,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 761643150}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1646714021}
@@ -2317,7 +2321,7 @@ Tilemap:
   m_GameObject: {fileID: 761643150}
   m_Enabled: 1
   m_Tiles:
-  - first: {x: 9, y: 2, z: 0}
+  - first: {x: 11, y: 2, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 1
@@ -5119,7 +5123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7af7711f3e9505540b96e79378878d10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  origines: {fileID: 1331921418}
+  origines: {fileID: 342116880}
   _Start: 0
 --- !u!114 &2121446536
 MonoBehaviour:
@@ -5202,10 +5206,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52a68646ca80ac547b8875730048c3d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  horizontal: 0
+  vertical: 0
   runSpeed: 300
   collision: {fileID: 0}
   multiplicateur: 1
   MaxCooldownEchangeur: 0.25
+  CooldownEchangeur: 0
   fleches:
   - {fileID: 0}
   - {fileID: 0}
@@ -5218,6 +5225,7 @@ MonoBehaviour:
   idbox_explosion: {fileID: 903588155}
   _cube_explosion: {fileID: 4478317703968863769, guid: 4b74fe13e788a0f4cac13d1c51065343, type: 3}
   _start_manager: {fileID: 1804781061}
+  _box: {fileID: 0}
 --- !u!212 &2121446540
 SpriteRenderer:
   m_ObjectHideFlags: 0

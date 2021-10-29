@@ -37,11 +37,13 @@ public class placement : MonoBehaviour
         if (drag_on)
         {
             transform.position = new Vector2(souris_pos.x, souris_pos.y);
+     
         }
 
 
         if (Input.GetMouseButtonDown(0))
         {
+
             if (drag_on)
             {
                 drag_on = false;
@@ -59,6 +61,7 @@ public class placement : MonoBehaviour
             else if (souris_pos.x > transform.position.x- 80 && souris_pos.x < transform.position.x + 64 && souris_pos.y > transform.position.y - 64 && souris_pos.y < transform.position.y + 80)
             {
                 drag_on = true;
+                
             }
 
 
