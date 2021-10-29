@@ -16,3 +16,5 @@ Lucas Bourdon : Conception de la nouvelle méchanique et rework graphique des me
 GP/GD : __Hugo Monmousseau__ <https://github.com/hugomonmousseau>
 LD/GD : __Siméon Arthaud__ <https://github.com/somegame94>
 GA/GD : __Lucas Bourdon__ <https://github.com/lucasbourdon>
+
+lien pour download le jeu : https://hugomonmousseau.itch.io/unstablepixel-v2
